@@ -23,8 +23,7 @@ I'm free to use! Just rememeber to credit.
 ### Prerequisites / Deployment 
 If you wish to install this as a standalone server, [just contact me](mailto:admin@noamyg.com) for help.
 
-If you wish to make changes, you'll have to get [Python](https://www.python.org/) 3.6.4 or above installed. Once
-1. 
+If you wish to make changes, you'll have to get [Python](https://www.python.org/) 3.6.4 or above installed. Then:
 1. Make sure to configure your organization's SMTP server in a config.xml file. You may use config.example.xml for reference.
 2. If you made changes to the code, you might want to edit app.spec. [See here](https://pythonhosted.org/PyInstaller/spec-files.html).
 3. No changes to the spec file needed? Good! just run "pyinstaller app.spec".
