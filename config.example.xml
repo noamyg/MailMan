@@ -6,11 +6,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SMTPServerConfiguration>
     <SMTPServer>
-        <Name>BT</Name>
-        <Host>smtp.btconnect.com</Host>
+        <Name>YourOrganization</Name>
+        <Host>smtp.yourorganization.com</Host>
 		<Port>25</Port>
         <Auth>None</Auth>
 		<UserName></UserName>
 		<Password></Password>
+    </SMTPServer>
+    <SMTPServer>
+        <Name>Gmail</Name>
+        <Host>smtp.gmail.com</Host>
+		<Port>587</Port>
+        <Auth>Simple</Auth>
+		<UserName>yourgmailusername@gmail.com</UserName>
+		<Password>yourgmailpass</Password>
     </SMTPServer>
 </SMTPServerConfiguration>
