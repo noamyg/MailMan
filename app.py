@@ -69,7 +69,8 @@ def render_static_templates():
     table = ""
     for t in templates:
         table+='\t\t<tr><td><a href="{0}">{1}</a></td></tr>\n'.format('/templates/'+t, t)
-    return render_template("templates.html").format(table)
+    # return render_template("templates.html").format(table)
+    return render_template("templates.html", templates = templates)
 
 @app.route('/contact')
 def render_static_contact():
@@ -86,14 +87,19 @@ def downloadTemplate (path = None):
         logger.log.exception(e)
         abort(400)
 
+ALLOWED_EXTENSIONS = set(['html'])
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/templateUploader', methods = ['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        f = request.files['file']
-        filename = secure_filename(f.filename)
-        f.save(os.path.join('./templates/', filename))
-        return redirect('/templates')
+            f = request.files['file']
+            if f and allowed_file(f.filename):
+                filename = secure_filename(f.filename)
+                f.save(os.path.join('./templates/', filename))
+            return redirect('/templates')
 
 api.add_resource(SendMail, '/sendMail')
 

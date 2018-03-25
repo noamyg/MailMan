@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../DjangoFundamentals/.idea/DjangoFundamentals.iml" filepath="$PROJECT_DIR$/../DjangoFundamentals/.idea/DjangoFundamentals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../FirstProject/.idea/FirstProject.iml" filepath="$PROJECT_DIR$/../FirstProject/.idea/FirstProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/MailMan.iml" filepath="$PROJECT_DIR$/.idea/MailMan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../.idea/PycharmProjects.iml" filepath="$PROJECT_DIR$/../.idea/PycharmProjects.iml" />
     </modules>
   </component>
 </project>

@@ -31,19 +31,37 @@
     <div class="container">
         <h1>These are the current HTML templates.</h1>
         <h2>You may upload a new one.</h2>
+        <h4>Just make sure to use the following pattern:</h4>
+        <ul>
+          <li>First line of your HTML file should be the &lt;subject&gt; tag. This would contain the subject of the sent mail.</li>
+          <li>Within either the subject or the body, use brackets to define parameters with braces: <pre><code class="html">Hello &#123;fullName&#125;, please make sure you complete your task by &#123;taskDate&#125;</code></pre></li>
+          <li>You may (and should) use &lt;style&gt; tags to style your HTML, just make sure to escape the styling with double braces <pre><code class="css">
+            .logo &#123;&#123;
+              text-align: left;
+            &#125;&#125;</code></pre></li>
+        </ul>
     </div>
   </div>
 
 
+  <div class="container jumbotron">
     <form action = "/templateUploader" method ="POST" enctype="multipart/form-data">
        <input type = "file" name = "file"/>
        <input type = "submit"/>
     </form>
 
-  <div class="container">
     <table>
       <tbody>
-        {0}
+        <p>
+          <!--{0}-->
+          {% for t in templates %}
+            <tr>
+              <td>
+                <a href="/templates/{{ t }}">{{ t }}</a>
+              </td>
+            </tr>
+           {% endfor %}
+        </p>
       </tbody>
     </table>
   </div>

@@ -6,6 +6,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="DjangoFundamentals" />
+    <orderEntry type="module" module-name="DjangoFundamentals" />
+    <orderEntry type="module" module-name="FirstProject" />
+    <orderEntry type="module" module-name="PycharmProjects" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />
