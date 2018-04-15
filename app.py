@@ -66,11 +66,7 @@ def render_static_home():
 @app.route('/templates')
 def render_static_templates():
     templates = templateController.getAllTemplates('./templates')
-    table = ""
-    for t in templates:
-        table+='\t\t<tr><td><a href="{0}">{1}</a></td></tr>\n'.format('/templates/'+t, t)
-    # return render_template("templates.html").format(table)
-    return render_template("templates.html", templates = templates)
+    return render_template("templates.html", templates=templates)
 
 @app.route('/contact')
 def render_static_contact():
@@ -95,11 +91,17 @@ def allowed_file(filename):
 @app.route('/templateUploader', methods = ['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-            f = request.files['file']
-            if f and allowed_file(f.filename):
-                filename = secure_filename(f.filename)
-                f.save(os.path.join('./templates/', filename))
-            return redirect('/templates')
+        f = request.files['file']
+        if f and allowed_file(f.filename):
+            filename = secure_filename(f.filename)
+            f.save(os.path.join('./templates/', filename))
+        return redirect('/templates')
+
+
+@app.route('/deleteTemplate/<string:file_name>/')
+def delete_file(file_name):
+    os.remove(os.path.join('./templates/', file_name))
+    return redirect('/templates')
 
 api.add_resource(SendMail, '/sendMail')
 

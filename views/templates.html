@@ -3,7 +3,10 @@
     <title>Mail Man</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/font-awesome-animation.min.css')}}">
+    <link rel="icon" href="{{url_for('static',filename='images/mail_icon.png')}}">
     <script src="{{url_for('static',filename='js/jquery.js')}}"></script>
+    <script src="{{url_for('static',filename='js/fontawesome-all.min.js')}}"></script>
     <script src="{{url_for('static',filename='js/highlight.pack.js')}}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
   </head>
@@ -35,10 +38,9 @@
         <ul>
           <li>First line of your HTML file should be the &lt;subject&gt; tag. This would contain the subject of the sent mail.</li>
           <li>Within either the subject or the body, use brackets to define parameters with braces: <pre><code class="html">Hello &#123;fullName&#125;, please make sure you complete your task by &#123;taskDate&#125;</code></pre></li>
-          <li>You may (and should) use &lt;style&gt; tags to style your HTML, just make sure to escape the styling with double braces <pre><code class="css">
-            .logo &#123;&#123;
-              text-align: left;
-            &#125;&#125;</code></pre></li>
+          <li>You may (and should) use &lt;style&gt; tags to style your HTML, just make sure to escape the styling with double braces <pre><code class="css">.logo &#123;&#123;
+    text-align: left;
+&#125;&#125;</code></pre></li>
         </ul>
     </div>
   </div>
@@ -46,22 +48,29 @@
 
   <div class="container jumbotron">
     <form action = "/templateUploader" method ="POST" enctype="multipart/form-data">
-       <input type = "file" name = "file"/>
-       <input type = "submit"/>
+        <div class="form-group">
+           <label class="custom-file" for="file">
+              <input accept=".html" type="file" id="file" name="file" class="custom-file-input">
+              <span class="custom-file-control"></span>
+            </label>
+        </div>
+        <input type="submit" class="btn btn-primary"/>
     </form>
 
-    <table>
+  <table class="table">
+      <thead>
+        <tr>
+          <th class="col-md-2" scope="col">Delete</th>
+          <th scope="col">Template Name</th>
+        </tr>
+      </thead>
       <tbody>
-        <p>
-          <!--{0}-->
-          {% for t in templates %}
-            <tr>
-              <td>
-                <a href="/templates/{{ t }}">{{ t }}</a>
-              </td>
-            </tr>
-           {% endfor %}
-        </p>
+      {% for t in templates %}
+        <tr>
+          <td><a style="color: red;" href="/deleteTemplate/{{ t }}"><span class="glyphicon glyphicon-remove"/></a></td>
+          <td><a href="/templates/{{ t }}">{{ t }}</a></td>
+        </tr>
+      {% endfor %}
       </tbody>
     </table>
   </div>
