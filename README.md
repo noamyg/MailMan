@@ -27,7 +27,7 @@ If you wish to make changes, you'll have to get [Python](https://www.python.org/
 1. Make sure to configure your organization's SMTP server in a config.xml file. You may use config.example.xml for reference.
 2. If you made changes to the code, you might want to edit app.spec. [See here](https://pythonhosted.org/PyInstaller/spec-files.html).
 3. No changes to the spec file needed? Good! just run "pyinstaller app.spec".
-4. After pyinstaller is done, your app is ready inside of disk folder.
+4. After pyinstaller is done, your app is ready inside of "dist" folder.
 5. You may run app.exe with a parameter (the name of the connection inside config.xml) or use NSSM to install as a service.
 
 
