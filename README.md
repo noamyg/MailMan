@@ -46,6 +46,7 @@ If you wish to make changes, you'll have to get [Python](https://www.python.org/
                         "t" : "message", //Name of the template you're using
                         "to" : "employee@company.com",
                         "cc" : "pm@company.com",
+                        "bcc" : "secret@company.com",
                         "sp" : { //Subject parameters (embedded inside the HTML <subject> tag)
                             "TaskName" : "A New Task"
                         },
