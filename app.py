@@ -10,6 +10,7 @@ import sys
 import os
 import logging
 
+
 app = Flask(__name__, template_folder='views')
 CORS(app)
 api = Api(app)
@@ -26,6 +27,7 @@ logging.basicConfig(
 
 logger = logging.getLogger('mailman_logger')
 
+
 if len(sys.argv) < 2 or smtpController.connect(sys.argv[1]) is not True:
     logger.error("You must supply a SMTP connection name as a parameter (using a valid connection from config.xml)")
     logger.error("If running as NSSM service, use nssm.exe edit to add server name as parameter")
@@ -36,11 +38,12 @@ class SendMail(Resource):
     def post(self):
         logger.info('Got a request to send mail.')
         body = request.get_json()
-        to = body.get("to")
-        cc = body.get("cc")
-        if not to and not cc:
-            logger.warning('"to" or "cc" attributes are missing')
-            abort(400, 'You must supply either a "to" or "cc" attributes')
+        to = body.get("to") if body.get("to") else ""
+        cc = body.get("cc") if body.get("cc") else ""
+        bcc = body.get("bcc") if body.get("bcc") else ""
+        if not to and not cc and not bcc:
+            logger.warning('"to", "cc" or "bcc" attributes are missing')
+            abort(400, 'You must supply either a "to", "cc" or "bcc" attributes')
         if to:
             for toAddress in to.split(','):
                 if not validate_email(toAddress):
@@ -51,11 +54,16 @@ class SendMail(Resource):
                 if not validate_email(ccAddress):
                     logger.warning('Invalid "cc" attribute')
                     abort(400, '"{}" is not a valid email address.'.format(ccAddress))
+        if bcc:
+            for bccAddress in bcc.split(','):
+                if not validate_email(bccAddress):
+                    logger.warning('Invalid "bcc" attribute')
+                    abort(400, '"{}" is not a valid email address.'.format(bccAddress))
         template = 'templates/{}.html'.format(body.get("t"))
-        logger.info('Recipients: {}, CCRecipients: {}, Template: {}'.format(to, cc, body.get("t")))
+        logger.info('Recipients: {}, CCRecipients: {}, BCCRecipients {}, Template: {}'.format(to, cc, bcc, body.get("t")))
         subjectParams = body.get("sp")
         bodyParams = body.get("bp")
-        smtpController.sendMail(to, cc, template, bodyParams, subjectParams)
+        smtpController.sendMail(to, cc, bcc, template, bodyParams, subjectParams)
         return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
 
 
@@ -63,18 +71,25 @@ class SendMail(Resource):
 def render_static_home():
     return render_template("index.html")
 
+
 @app.route('/templates')
 def render_static_templates():
     templates = templateController.getAllTemplates('./templates')
     return render_template("templates.html", templates=templates)
+
 
 @app.route('/contact')
 def render_static_contact():
     return render_template("contact.html")
 
 
+@app.route('/login')
+def render_static_login():
+    return render_template("login.html")
+
+
 @app.route("/templates/<path>")
-def downloadTemplate (path = None):
+def downloadTemplate(path = None):
     if path is None:
         abort(400)
     try:
@@ -83,10 +98,14 @@ def downloadTemplate (path = None):
         logger.log.exception(e)
         abort(400)
 
+
 ALLOWED_EXTENSIONS = set(['html'])
+
+
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 @app.route('/templateUploader', methods = ['GET', 'POST'])
 def upload_file():
@@ -103,7 +122,9 @@ def delete_file(file_name):
     os.remove(os.path.join('./templates/', file_name))
     return redirect('/templates')
 
+
 api.add_resource(SendMail, '/sendMail')
+
 
 if __name__ == '__main__':
     app.run(threaded=False ,host='0.0.0.0')

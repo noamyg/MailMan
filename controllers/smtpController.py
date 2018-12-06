@@ -48,12 +48,15 @@ def testCurrentConnection(conn):
         status = -1
     return True if status == 250 else False
 
-def sendMail(to, cc, template, bodyParams, subjectParams):
+def sendMail(to, cc, bcc, template, bodyParams, subjectParams):
     global connection
     if not testCurrentConnection(connection):
         connect(currentConnectionName)
-    msg = MIMEMultipart('alternative')
     subject, fromEmail, body = templateController.readTemplate(template)
+    msg = MIMEMultipart('alternative')
+    msg['From'] = fromEmail
+    msg['To'] = to
+    msg['Cc'] = cc
     if subjectParams:
         msg['Subject'] = templateController.replaceTextWithParams(subject, subjectParams)
     else:
@@ -62,11 +65,9 @@ def sendMail(to, cc, template, bodyParams, subjectParams):
         msg['Body'] = templateController.replaceTextWithParams(body, bodyParams)
     else:
         msg['Body'] = body
-    msg['From'] = fromEmail
-    msg['To'] = to
-    msg['Cc'] = cc
+
     msg.attach(MIMEText(msg['Body'], 'html'))
-    connection.sendmail(msg['From'], msg["To"].split(','), msg.as_string())
+    connection.sendmail(msg['From'], to.split(',') + cc.split(',') + bcc.split(','), msg.as_string())
     del msg
 
 def disconnect():
