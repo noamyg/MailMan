@@ -4,14 +4,14 @@ Hey there!
 This project will help you spread some mails around with a simple RestFUL API.
 
 ## For whom?
-Anyone who already has a SMTP server and whouldn't want to pay for third-party services such as Mailgun or Sendgrid.
+Anyone who already has a SMTP server and whouldn't want to pay for third-party services.
 
 ## Why?
 
-Sometimes you just need to be able to let your users send a mail with a click of a button. But on some occasions, that wouldn't be so simple to implement.
+Sometimes you just need to be able to let your users send a mail with a click of a button.
 
-1. You may have a static website that doesn't have any SMTP logic.
-2. You might have a full-scale application that has it's own SMTP integration, but it has it's own rules that you'd like to bypass.
+1. You may have a static website that doesn't have any SMTP logic (or no back-end at all).
+2. You might have a full-scale application that has it's own SMTP integration, but it has it's own rules (styling or event-triggered) that you'd wish to bypass.
 
 Mail Man would let you define your own HTML files as templates for mailing. You can embed parameters inside of that HTML and sent their values on your request.
 
@@ -20,15 +20,20 @@ I'm free to use! Just rememeber to credit.
 ### 
 
 
-### Prerequisites / Deployment 
+### Installation
 If you wish to install this as a standalone server, [just contact me](mailto:admin@noamyg.com) for help.
 
 If you wish to make changes, you'll have to get [Python](https://www.python.org/) 3.6.4 or above installed. Then:
-1. Make sure to configure your organization's SMTP server in a config.xml file. You may use config.example.xml for reference.
-2. If you made changes to the code, you might want to edit app.spec. [See here](https://pythonhosted.org/PyInstaller/spec-files.html).
-3. No changes to the spec file needed? Good! just run "pyinstaller app.spec".
-4. After pyinstaller is done, your app is ready inside of "dist" folder.
-5. You may run app.exe with a parameter (the name of the connection inside config.xml) or use NSSM to install as a service.
+1. Install with `pip install -r requirements.txt`.
+2. Make sure to configure your organization's SMTP server in a config.xml file. You may use config.example.xml for reference.
+3. Run app.py with the the name of your SMTP server as a param (i.e., `python app.py Gmail`).
+
+### Deployment
+
+1. If you made changes to the code, you might want to edit app.spec. [See here](https://pythonhosted.org/PyInstaller/spec-files.html).
+2. No changes to the spec file needed? Good! just run "pyinstaller app.spec".
+3. After pyinstaller is done, your app is ready inside of "dist" folder.
+4. You may run app.exe with the server name as param or use [NSSM](https://nssm.cc/usage) to install it as a service.
 
 
 ### Example POST request
