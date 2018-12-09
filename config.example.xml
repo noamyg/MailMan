@@ -1,9 +1,9 @@
-<!--
-    This is NOT(!!!) A real configuration!
-    Please use this file as a reference for SMTP connection configuration.
-    You may edit this file and rename it to "config.xml" to make it real.
-    -->
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+This is not a real configuration!
+Please use this file as a reference for SMTP connection configuration.
+You may edit this file and rename it to "config.xml" to make it real.
+-->
 <SMTPServerConfiguration>
     <SMTPServer>
         <Name>YourOrganization</Name>
