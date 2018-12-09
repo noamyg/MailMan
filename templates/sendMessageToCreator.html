@@ -1,0 +1,135 @@
+<subject>New Response From MailMan!</subject>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <style type="text/css">
+
+      body {{
+        direction: ltr;
+        margin: 0;
+        font-family: arial;
+      }}
+
+      .mail {{
+        margin: 0;
+      }}
+
+      .main_header {{
+        background-color: #431569;
+        font-size: 16pt;
+        font-family: Tahoma;
+      }}
+
+      .sub_main_header {{
+        background-color: #989898;
+        font-size: 14pt;
+        font-family: Tahoma;
+      }}
+
+      .space {{
+        height: 2px;
+      }}
+
+      .large_space {{
+        height: 6px;
+      }}
+
+      .data {{
+        width: 100%;
+      }}
+
+      .details {{
+        font-size: 12pt;
+      }}
+
+      .details td.title {{
+        width: 1%;
+		font-weight:bold;
+        white-space: nowrap;
+        font-family: Tahoma;
+      }}
+
+      .links {{
+        font-size: 14pt;
+      }}
+
+      .footer {{
+        background-color: #431569;
+        color: white;
+        font-family: Tahoma;
+        font-size: 10pt;
+      }}
+
+      .logo {{
+        text-align: left;
+      }}
+    </style>
+  </head>
+  <body>
+
+    <div class="mail">
+
+      <table class="data">
+        <thead>
+          <tr>
+            <td colspan="2" class="main_header">
+				Hello, <br>
+                Someone sent you a mail through "contact" section in MailMan.
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="sub_main_header">
+             Contact Details:
+            </td>
+          </tr>
+        </thead>
+        <tbody class="details">
+          <tr>
+            <td class="title">
+             Name:
+            </td>
+            <td>
+              {YourName}
+            </td>
+          </tr>
+          <tr>
+            <td class="title">
+             Phone:
+            </td>
+            <td>
+              {PhoneNumber}
+            </td>
+          </tr>
+          <tr>
+            <td class="title">
+             How Much I Liked It:
+            </td>
+            <td>
+              {Liked}
+            </td>
+          </tr>
+          <tr>
+            <td class="title">
+             Notes:
+            </td>
+            <td>
+              {Notes}
+            </td>
+          </tr>
+         </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2" class="links">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="footer">
+              Please do not reply to this email.
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </body>
+</html>
