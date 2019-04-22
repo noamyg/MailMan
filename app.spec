@@ -7,6 +7,7 @@ added_files = [
          ( './nssm-2.24', 'nssm-2.24' ),
          ( './views', 'views' ),
          ( './static', 'static' ),
+         ( './certificates', 'certificates' ),
          ( './config.xml', '.' )
          ]
 
