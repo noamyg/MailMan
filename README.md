@@ -34,6 +34,7 @@ If you wish to make changes, you'll have to get [Python](https://www.python.org/
 2. No changes to the spec file needed? Good! just run "pyinstaller app.spec".
 3. After pyinstaller is done, your app is ready inside of "dist" folder.
 4. You may run app.exe with the server name as param or use [NSSM](https://nssm.cc/usage) to install it as a service.
+5. To run the server on HTTPS, add a `server.crt` and `server.key` files to `certificates` folder.
 
 
 ### Example POST request
