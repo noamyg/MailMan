@@ -34,12 +34,12 @@ def connect(connectioName):
                     if server.auth != 'None':
                         connection.login(server.username, server.password)
                 except:
+                    connection.quit()
                     pass
                 logger.info('Connected to {}'.format(connectioName))
                 return True
             except:
                 logger.info("Unable to connect to {}".format(server.name))
-                connection.quit()
 
 def testCurrentConnection(conn):
     try:
