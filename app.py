@@ -33,6 +33,7 @@ if len(sys.argv) < 2 or smtpController.connect(sys.argv[1]) is not True:
     logger.error("If running as NSSM service, use nssm.exe edit to add server name as parameter")
     sys.exit(2)
 
+port = 5000
 
 class SendMail(Resource):
     def post(self):
@@ -69,7 +70,7 @@ class SendMail(Resource):
 
 @app.route('/')
 def render_static_home():
-    return render_template("index.html")
+    return render_template("index.html", port=port)
 
 
 @app.route('/templates')
@@ -127,10 +128,12 @@ api.add_resource(SendMail, '/sendMail')
 
 
 if __name__ == '__main__':
+    if len(sys.argv) == 3:
+        port = sys.argv[2]
     if os.path.isfile('./certificates/server.crt') and os.path.isfile('./certificates/server.key'):
         logger.info("Certificates found. Running with SSL context")
         context = ('./certificates/server.crt', './certificates/server.key')
-        app.run(threaded=False, host='0.0.0.0', ssl_context=context)
+        app.run(threaded=False, host='0.0.0.0', port=port, ssl_context=context)
     else:
         logger.info("Did not find any certificates. Running as HTTP")
-        app.run(threaded=False, host='0.0.0.0')
+        app.run(threaded=False, host='0.0.0.0', port=port)

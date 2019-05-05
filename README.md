@@ -26,14 +26,14 @@ If you wish to install this as a standalone server, [just contact me](mailto:adm
 If you wish to make changes, you'll have to get [Python](https://www.python.org/) 3.6.4 or above installed. Then:
 1. Install with `pip install -r requirements.txt`.
 2. Make sure to configure your organization's SMTP server in a `config.xml` file. You may use `config.example.xml` for reference.
-3. Run app.py with the the name of your SMTP server as a param (i.e., `python app.py Gmail`).
+3. Run app.py with the the name of your SMTP server as first param, and optional port (default: 5000) as second param (i.e., `python app.py Gmail [8080]`).
 
 ### Deployment
 
 1. If you made changes to the code, you might want to edit `app.spec`. [See here](https://pythonhosted.org/PyInstaller/spec-files.html).
 2. No changes to the spec file needed? Good! just run `pyinstaller app.spec`.
 3. After pyinstaller is done, your app is ready inside of `dist` folder.
-4. You may run `app.exe` with the server name as param or use [NSSM](https://nssm.cc/usage) to install it as a service.
+4. You may run `app.exe` with the server name and port params or use [NSSM](https://nssm.cc/usage) to install it as a service.
 5. To run the server on HTTPS, add a `server.crt` and `server.key` files to `certificates` folder.
 
 
@@ -41,7 +41,7 @@ If you wish to make changes, you'll have to get [Python](https://www.python.org/
 
 ```javascript
             $.ajax({
-                url: 'http://**ServerDNSOrIP**:5000/sendMail',
+                url: 'http://**ServerDNSOrIP**:**Port**/sendMail',
                 type: 'post',
                 contentType: 'application/json; charset=utf-8',
                 success: function (data){
