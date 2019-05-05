@@ -26,5 +26,25 @@ function sendMailToCreator(){
             }
         )
     });
+};
 
+function uploadTemplate(){
+    var form = $('form')[0];
+    var formData = new FormData(form);
+    $.ajax({
+        url: 'templateUploader',
+        type: 'post',
+        processData: false,
+        contentType: false,
+        data: formData
+    })
+    .success(function (data) {
+        toastr.success("Template successfully uploaded");
+        location.reload();
+    })
+    .fail(function (error) {
+        toastr.clear();
+        toastr.error("Error occurred: " + error.responseText);
+    });
+    return false;
 };

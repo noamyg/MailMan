@@ -70,27 +70,27 @@ class SendMail(Resource):
 
 @app.route('/')
 def render_static_home():
-    return render_template("index.html", port=port)
+    return render_template("index.html", page="index", port=port)
 
 
 @app.route('/templates')
 def render_static_templates():
     templates = templateController.getAllTemplates('./templates')
-    return render_template("templates.html", templates=templates)
+    return render_template("templates.html", templates=templates, page="templates")
 
 
 @app.route('/contact')
 def render_static_contact():
-    return render_template("contact.html")
+    return render_template("contact.html", page="contact")
 
 
 @app.route('/login')
 def render_static_login():
-    return render_template("login.html")
+    return render_template("login.html", page="login")
 
 
 @app.route("/templates/<path>")
-def downloadTemplate(path = None):
+def donwload_template(path = None):
     if path is None:
         abort(400)
     try:
@@ -115,6 +115,8 @@ def upload_file():
         if f and allowed_file(f.filename):
             filename = secure_filename(f.filename)
             f.save(os.path.join('./templates/', filename))
+        else:
+            return abort(400, 'Was that really and .HTML file?')
         return redirect('/templates')
 
 
