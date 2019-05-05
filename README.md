@@ -67,4 +67,4 @@ If you wish to make changes, you'll have to get [Python](https://www.python.org/
 Please refer to message.html to see how parameters are set. 
 
 ### Uploading new templates
-You can either add .html files manually or upload them. Just refer to http://**ServerDNSOrIP**:**Port**/templates.
+You can either add .html files manually or upload them. Just refer to `http://**ServerDNSOrIP**:**Port**/templates`.
