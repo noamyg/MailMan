@@ -8,13 +8,17 @@ def readTemplate(filename):
         soup = BeautifulSoup(templateFileContent, 'html.parser')
         templateSubject= ''
         templateSender = ''
+        templateSenderName = ''
         if soup.subject:
             templateSubject = soup.subject.string
             templateFileContent = templateFileContent.replace(escape(templateSubject), '')
         if soup.sender:
             templateSender = soup.sender.string
-            templateFileContent = templateFileContent.replace(escape(templateSender) , '')
-        return templateSubject, templateSender, templateFileContent
+            templateFileContent = templateFileContent.replace(escape(templateSender), '')
+        if soup.sendername:
+            templateSenderName = soup.sendername.string
+            templateFileContent = templateFileContent.replace(escape(templateSenderName), '')
+        return templateSubject, templateSender, templateSenderName, templateFileContent
 
 
 def replaceTextWithParams(text, params):

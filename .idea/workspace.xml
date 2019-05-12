@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6b9c13c2-0474-4509-a7f4-7e86fdae31d0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/smtpController.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/smtpController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/templateController.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/templateController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/ajax.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/message.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/message.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sendMessageToCreator.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sendMessageToCreator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/templates.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/templates.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,12 +51,8 @@
       <file leaf-file-name="message.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/message.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="87" selection-start-line="2" selection-start-column="87" selection-end-line="2" selection-end-column="87" />
-              <folding>
-                <element signature="e#78#82#0" expanded="true" />
-                <element signature="e#103#107#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" column="101" selection-start-line="4" selection-start-column="101" selection-end-line="4" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -66,8 +60,8 @@
       <file leaf-file-name="sendMessageToCreator.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sendMessageToCreator.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="19" selection-start-column="19" selection-end-column="19" />
+            <state relative-caret-position="34">
+              <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -75,8 +69,8 @@
       <file leaf-file-name="smtpController.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/smtpController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="59" column="20" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="20" />
+            <state relative-caret-position="476">
+              <caret line="61" column="30" lean-forward="true" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -87,8 +81,8 @@
       <file leaf-file-name="templateController.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/templateController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="323">
+              <caret line="19" column="88" selection-start-line="19" selection-start-column="88" selection-end-line="19" selection-end-column="88" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -127,7 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>werk</find>
       <find>war</find>
       <find>If</find>
       <find>if</find>
@@ -157,6 +150,7 @@
       <find>subject</find>
       <find>&lt;subject&gt;</find>
       <find>template</find>
+      <find>!=</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -202,7 +196,6 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app.spec" />
         <option value="$PROJECT_DIR$/certificates/Readme.txt" />
-        <option value="$PROJECT_DIR$/controllers/smtpController.py" />
         <option value="$PROJECT_DIR$/static/css/main.css" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/views/header.html" />
@@ -212,18 +205,19 @@
         <option value="$PROJECT_DIR$/views/login.html" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/views/templates.html" />
-        <option value="$PROJECT_DIR$/controllers/templateController.py" />
         <option value="$PROJECT_DIR$/static/js/ajax.js" />
+        <option value="$PROJECT_DIR$/controllers/templateController.py" />
+        <option value="$PROJECT_DIR$/controllers/smtpController.py" />
         <option value="$PROJECT_DIR$/templates/sendMessageToCreator.html" />
         <option value="$PROJECT_DIR$/templates/message.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="550" />
+    <option name="y" value="-1069" />
+    <option name="width" value="1094" />
+    <option name="height" value="1017" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -325,17 +319,17 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\PycharmProjects\MailMan\views" />
-      <recent name="D:\PycharmProjects\MailMan\templates" />
-      <recent name="D:\PycharmProjects\ProTwo\templates\app_two" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PycharmProjects\MailMan\views\shared" />
       <recent name="D:\PycharmProjects\FirstProject\static\images" />
       <recent name="D:\PycharmProjects\FirstProject\templates\FirstApp" />
       <recent name="D:\PycharmProjects\MailMan\controllers" />
       <recent name="D:\PycharmProjects\MailMan\model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PycharmProjects\MailMan\views" />
+      <recent name="D:\PycharmProjects\MailMan\templates" />
+      <recent name="D:\PycharmProjects\ProTwo\templates\app_two" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -602,7 +596,21 @@
       <option name="project" value="LOCAL" />
       <updated>1557064789215</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Escaping &lt;sender&gt; attribute to support custom sender names">
+      <created>1557648320533</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1557648320533</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Comment in message.html">
+      <created>1557650864824</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1557650864824</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView">
@@ -615,15 +623,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="100" y="-1058" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19283456" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22074789" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49947312" weight="0.32897604" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5184405" side_tool="true" visible="true" weight="0.4335512" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5186972" side_tool="true" visible="true" weight="0.4481982" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4963119" weight="0.32570806" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.49789253" weight="0.32570806" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48155954" visible="true" weight="0.4335512" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48130277" visible="true" weight="0.4481982" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24960254" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4857745" weight="0.30501089" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -653,16 +661,13 @@
     <MESSAGE value="Port setup as a startup param &amp; added reference to GitHub on header" />
     <MESSAGE value="Readme" />
     <MESSAGE value="Introduction of toasts and centralization of header and navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Introduction of toasts and centralization of header and navbar" />
+    <MESSAGE value="Escaping &lt;sender&gt; attribute to support custom sender names" />
+    <MESSAGE value="Comment in message.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comment in message.html" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/controllers/smtpController.py</url>
-          <line>60</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
           <line>64</line>
@@ -1021,33 +1026,6 @@
     <entry file="file://$PROJECT_DIR$/views/templates.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sendMessageToCreator.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/templateController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/smtpController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="59" column="20" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-221">
@@ -1083,14 +1061,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/message.html">
+    <entry file="file://$PROJECT_DIR$/controllers/smtpController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="61" column="30" lean-forward="true" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/templateController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="88" selection-start-line="19" selection-start-column="88" selection-end-line="19" selection-end-column="88" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sendMessageToCreator.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="87" selection-start-line="2" selection-start-column="87" selection-end-line="2" selection-end-column="87" />
-          <folding>
-            <element signature="e#78#82#0" expanded="true" />
-            <element signature="e#103#107#0" expanded="true" />
-          </folding>
+          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="101" selection-start-line="4" selection-start-column="101" selection-end-line="4" selection-end-column="101" />
         </state>
       </provider>
     </entry>

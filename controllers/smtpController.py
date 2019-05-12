@@ -4,6 +4,8 @@ from model.server import Server as SMTPServer
 from controllers import templateController
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from email.header import Header
+from email.utils import formataddr
 import logging
 
 logger = logging.getLogger('mailman_logger')
@@ -52,9 +54,14 @@ def sendMail(to, cc, bcc, template, bodyParams, subjectParams):
     global connection
     if not testCurrentConnection(connection):
         connect(currentConnectionName)
-    subject, fromEmail, body = templateController.readTemplate(template)
+    subject, fromEmail, fromName, body = templateController.readTemplate(template)
     msg = MIMEMultipart('alternative')
-    msg['From'] = fromEmail
+    if fromEmail != '' and fromName != '':
+        msg['From'] = formataddr((str(Header(fromName, 'utf-8')), fromEmail))
+    elif fromName != '':
+        msg['From'] = fromName
+    else:
+        msg['From'] = fromEmail
     msg['To'] = to
     msg['Cc'] = cc
     if subjectParams:
