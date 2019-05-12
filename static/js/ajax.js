@@ -16,7 +16,9 @@ function sendMailToCreator(){
                 "to" : $('#to').val(),
                 "cc" : $('#cc').val(),
                 "bcc" : $('#bcc').val(),
-                "sp" : {},
+                "sp" : {
+                    "YourName" : $('#name').val()
+                },
                 "bp" : {
                     "YourName" : $('#name').val(),
                     "PhoneNumber" : $('#phone').val(),

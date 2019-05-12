@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+from html import escape
 import os
 
 def readTemplate(filename):
@@ -9,10 +10,10 @@ def readTemplate(filename):
         templateSender = ''
         if soup.subject:
             templateSubject = soup.subject.string
-            templateFileContent = templateFileContent.replace(templateSubject, '')
+            templateFileContent = templateFileContent.replace(escape(templateSubject), '')
         if soup.sender:
             templateSender = soup.sender.string
-            templateFileContent = templateFileContent.replace(templateSender , '')
+            templateFileContent = templateFileContent.replace(escape(templateSender) , '')
         return templateSubject, templateSender, templateFileContent
 
 
