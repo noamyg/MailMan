@@ -1,75 +1,67 @@
-<subject>{YourName} Sent You A New Response Through MailMan!</subject>
+<subject>{{ YourName }} Sent You A New Response Through MailMan!</subject>
+<!--<sender>Someone@somewhere.com</sender>
+<sendername>Someone Somewhere!</sendername>-->
 <html>
   <head>
     <title></title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <style type="text/css">
-
-      body {{
+      body {
         direction: ltr;
         margin: 0;
         font-family: arial;
-      }}
+      }
 
-      .mail {{
+      .mail {
         margin: 0;
-      }}
+      }
 
-      .main_header {{
+      .main_header {
         background-color: #431569;
         font-size: 16pt;
         font-family: Tahoma;
-      }}
+      }
 
-      .sub_main_header {{
+      .sub_main_header {
         background-color: #989898;
         font-size: 14pt;
         font-family: Tahoma;
-      }}
+      }
 
-      .space {{
+      .space {
         height: 2px;
-      }}
+      }
 
-      .large_space {{
+      .large_space {
         height: 6px;
-      }}
+      }
 
-      .data {{
+      .data {
         width: 100%;
-      }}
+      }
 
-      .details {{
+      .details {
         font-size: 12pt;
-      }}
+      }
 
-      .details td.title {{
+      .details td.title {
         width: 1%;
 		font-weight:bold;
         white-space: nowrap;
         font-family: Tahoma;
-      }}
+      }
 
-      .links {{
+      .links {
         font-size: 14pt;
-      }}
-
-      .footer {{
-        background-color: #431569;
-        color: white;
-        font-family: Tahoma;
-        font-size: 10pt;
-      }}
-
-      .logo {{
+      }
+	  
+      .logo {
         text-align: left;
-      }}
+      }
+	  
     </style>
-  <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/2CC690A3-7472-3846-A7A3-39F29AC51A59/main.js" charset="UTF-8"></script></head>
   <body>
-
     <div class="mail">
-
       <table class="data">
         <thead>
           <tr>
@@ -90,7 +82,7 @@
              Name:
             </td>
             <td>
-              {YourName}
+              {{ YourName }}
             </td>
           </tr>
           <tr>
@@ -98,7 +90,7 @@
              Phone:
             </td>
             <td>
-              {PhoneNumber}
+              {{ PhoneNumber }}
             </td>
           </tr>
           <tr>
@@ -106,7 +98,7 @@
              How Much I Liked It:
             </td>
             <td>
-              {Liked}
+              {{ Liked }}
             </td>
           </tr>
           <tr>
@@ -114,22 +106,30 @@
              Notes:
             </td>
             <td>
-              {Notes}
+              {{ Notes }}
             </td>
           </tr>
          </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="2" class="links">
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2" class="footer">
-              Please do not reply to this email.
-            </td>
-          </tr>
-        </tfoot>
       </table>
-    </div>
+	  <hr>
+	  {% if FeatureRequests|length > 0 %}
+	  <p class="sub_main_header">Features / Defects</p>
+      <table class="data">
+		<tbody class="details">
+			<tr>
+				<td class="title">Feature or Bug?</td>
+				<td class="title">Subject</td>
+				<td class="title">Description</td>
+			</tr>
+			{% for fr in FeatureRequests %}
+				<tr>
+					<td>{{ fr['Feature or Bug?'] }}</td>
+					<td>{{ fr.Subject }}</td>
+					<td>{{ fr.Description }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+      </table>
+	  {% endif %}
   </body>
 </html>

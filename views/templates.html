@@ -5,7 +5,18 @@
 
     <div class="jumbotron">
       <div class="container">
-          <h1>Upload new templates:</h1>
+          <h1>Upload new templates</h1>
+          <h2>Just make sure to use the following pattern:</h2>
+            <ul class="list-group">
+                <li class="list-group-flush">First line of your HTML file should be the &lt;subject&gt; tag. This would contain the subject of the sent mail.</li>
+                <li class="list-group-flush">&lt;sender&gt; and &lt;sender&gt; are optional. You may remove these attributes to use the SMTP defaults. Please note that these overrides are bound to the SMTP server rules; it may ignore your changes or reject your email.</li>
+                <li class="list-group-flush">MailMan uses <a href="http://jinja.pocoo.org/docs/2.10/templates/">Jinja2</a> as a templating engine. Within either the subject or the body, use double brackets to define parameters: <pre><code class="html">Hello &#123;&#123; fullName &#125;&#125;, please make sure you complete your task by &#123;&#123; taskDate &#125;&#125;</code></pre>
+                Please refer to Jinja2 documentation for additional information regarding its' usage.<br>
+                    <i>Hint:</i> you can use <a href="https://github.com/lightswitch05/table-to-json">table-to-json</a> to embed a table from your HTML page in a mail. You can see a live demo on <a href="/contact">Contact</a> page.</li>
+                <li class="list-group-flush">Include your &lt;style&gt; as any other HTML: <pre><code class="css">.logo &#123;
+    text-align: left;
+&#125;</code></pre></li>
+            </ul>
       </div>
     </div>
     <div class="container">
@@ -33,7 +44,7 @@
             </tr>
           {% endfor %}
           </tbody>
-      </table>
+        </table>
     </div>
   </body>
 </html>

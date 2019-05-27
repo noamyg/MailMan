@@ -1,6 +1,10 @@
 from bs4 import BeautifulSoup
 from html import escape
+from flask import render_template_string
 import os
+import logging
+
+logger = logging.getLogger('mailman_logger')
 
 def readTemplate(filename):
     with open(filename, 'r', encoding="utf-8") as templateFile:
@@ -22,8 +26,9 @@ def readTemplate(filename):
 
 
 def replaceTextWithParams(text, params):
-    text = text.format(**params)
+    text = render_template_string(text, **params)
     return text
+
 
 def getAllTemplates(relativePath):
     templateArr = []
