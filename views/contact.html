@@ -11,7 +11,7 @@
         </div>
       </div>
         <div class="container">
-            <form action="javascript:sendMailToCreator()">
+            <form action="javascript:sendMailToCreator(window.submitButton)">
               <div class="form-group">
                 <label for="name">Your Name</label>
                 <input type="text" class="form-control" id="name" placeholder="Your Name" required="true">
@@ -44,9 +44,31 @@
                 <label for="notes">Your notes:</label>
                 <textarea class="form-control" id="notes" rows="3"></textarea>
               </div>
-              <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+              <div class="container">
+                <div class="row">
+                    <p>Please let me know if you have some feature ideas or defects!</p>
+                </div>
+                <table id="featureRequests" class="table">
+                    <thead>
+                        <tr class="row">
+                            <td style="cursor: pointer" class="col-1"><i id="addRow" onclick="addNewRow()" class="fa fa-plus fa-lg cursor-pointer text-success" aria-hidden="true"></i></td>
+                            <th class="col-3">Feature or Bug?</th>
+                            <th class="col-3">Subject</th>
+                            <th class="col-4">Description</th>
+                            <th class="col-1">Delete Row</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+               <div class="button-group">
+                 <button type="submit" onclick="window.submitButton = this" id="submit" class="btn btn-primary">Submit</button>
+               </div>
             </form>
         </div>
       </div>
+      <script src="{{url_for('static',filename='js/jquery.tabletojson.js')}}"></script>
+      <script src="{{url_for('static',filename='js/contact.js')}}"></script>
   </body>
 </html>

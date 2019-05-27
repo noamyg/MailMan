@@ -1,4 +1,4 @@
-<subject>This is the subject: {TaskName}</subject>
+<subject>This is the subject: {{ TaskName }}</subject>
 <sender>Someone@somewhere.com</sender>
 <sendername>Someone Somewhere!</sendername>
 <!--
@@ -11,65 +11,65 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <style type="text/css">
 
-      body {{
+      body {
         direction: rtl;
         margin: 0;
         font-family: arial;
-      }}
+      }
 
-      .mail {{
+      .mail {
         margin: 0;
-      }}
+      }
 
-      .main_header {{
+      .main_header {
         background-color: #431569;
         font-size: 16pt;
         font-family: Tahoma;
-      }}
+      }
 
-      .sub_main_header {{
+      .sub_main_header {
         background-color: #989898;
         font-size: 14pt;
         font-family: Tahoma;
-      }}
+      }
 
-      .space {{
+      .space {
         height: 2px;
-      }}
+      }
 
-      .large_space {{
+      .large_space {
         height: 6px;
-      }}
+      }
 
-      .data {{
+      .data {
         width: 100%;
-      }}
+      }
 
-      .details {{
+      .details {
         font-size: 12pt;
-      }}
+      }
 
-      .details td.title {{
+      .details td.title {
         width: 1%;
 		font-weight:bold;
         white-space: nowrap;
         font-family: Tahoma;
-      }}
+      }
 
-      .links {{
+      .links {
         font-size: 14pt;
-      }}
+      }
 
-      .footer {{
+      .footer {
         background-color: #431569;
         color: white;
         font-family: Tahoma;
         font-size: 10pt;
-      }}
+      }
 
-      .logo {{
+      .logo {
         text-align: left;
-      }}
+      }
     </style>
   </head>
   <body>
@@ -96,7 +96,7 @@
              Link To Task:
             </td>
             <td>
-              <a href="http://linktotaskonjira.com">{TaskDescription}</a>
+              <a href="http://linktotaskonjira.com">{{ TaskDescription }}</a>
             </td>
           </tr>
          </tbody>

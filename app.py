@@ -1,8 +1,7 @@
 from werkzeug.utils import redirect, secure_filename
-
 from controllers import smtpController
 from controllers import templateController
-from flask import Flask, request, abort, json, render_template, send_from_directory, send_file, flash
+from flask import Flask, request, abort, json, render_template, send_file
 from flask_restful import Resource, Api
 from flask_cors import CORS
 from validate_email import validate_email
