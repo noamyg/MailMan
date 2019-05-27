@@ -138,7 +138,7 @@
       <find>sendMail</find>
       <find>5000</find>
       <find>octicon</find>
-      <find>Mail Man</find>
+      <find />
       <find>allowed_file</find>
       <find>uplo</find>
       <find>/templates</find>
