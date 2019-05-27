@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b9c13c2-0474-4509-a7f4-7e86fdae31d0" name="Default" comment="Toastr">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/templateController.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/templateController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/message.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/message.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sendMessageToCreator.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sendMessageToCreator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/shared/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/shared/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/templates.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/templates.html" afterDir="false" />
-    </list>
+    <list default="true" id="6b9c13c2-0474-4509-a7f4-7e86fdae31d0" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,8 +42,8 @@
       <file leaf-file-name="contact.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/contact.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="62" column="26" lean-forward="true" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
+            <state relative-caret-position="359">
+              <caret line="67" column="19" lean-forward="true" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#thead#0;n#table#0;n#div#7;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -151,7 +140,7 @@
       <find>sendMail</find>
       <find>5000</find>
       <find>octicon</find>
-      <find />
+      <find>Mail Man</find>
       <find>allowed_file</find>
       <find>uplo</find>
       <find>/templates</find>
@@ -620,7 +609,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557678848624</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Jinja Templating">
+      <created>1558950331741</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1558950331741</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView">
@@ -633,17 +629,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19283456" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49947312" weight="0.32897604" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5216017" side_tool="true" visible="true" weight="0.4324619" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5147524" side_tool="true" visible="true" weight="0.30501089" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4963119" weight="0.32570806" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.49789253" weight="0.32570806" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.47839832" visible="true" weight="0.4324619" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.47839832" weight="0.4324619" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24960254" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4857745" weight="0.30501089" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.48524764" visible="true" weight="0.30501089" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49457178" weight="0.36824325" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -675,7 +670,8 @@
     <MESSAGE value="Comment in message.html" />
     <MESSAGE value="Separating &lt;sender&gt; and &lt;sendername&gt;" />
     <MESSAGE value="Toastr" />
-    <option name="LAST_COMMIT_MESSAGE" value="Toastr" />
+    <MESSAGE value="Jinja Templating" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jinja Templating" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1107,8 +1103,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/contact.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="62" column="26" lean-forward="true" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
+        <state relative-caret-position="359">
+          <caret line="67" column="19" lean-forward="true" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#thead#0;n#table#0;n#div#7;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
