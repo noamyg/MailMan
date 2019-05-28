@@ -11,7 +11,7 @@ added_files = [
          ( './config.xml', '.' )
          ]
 
-a = Analysis(['app.py'],
+a = Analysis(['mailMan.py'],
              binaries=[],
              datas=added_files,
              hiddenimports=[],
@@ -26,7 +26,7 @@ pyz = PYZ(a.pure, a.zipped_data,
 exe = EXE(pyz,
           a.scripts,
           exclude_binaries=True,
-          name='app',
+          name='MailMan',
           debug=False,
           strip=False,
           upx=True,
@@ -37,4 +37,4 @@ coll = COLLECT(exe,
                a.datas,
                strip=False,
                upx=True,
-               name='app')
+               name='MailMan')

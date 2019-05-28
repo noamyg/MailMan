@@ -130,7 +130,7 @@ api.add_resource(SendMail, '/sendMail')
 
 if __name__ == '__main__':
     if len(sys.argv) == 3:
-        port = sys.argv[2]
+        port = int(sys.argv[2])
     if os.path.isfile('./certificates/server.crt') and os.path.isfile('./certificates/server.key'):
         logger.info("Certificates found. Running with SSL context")
         context = ('./certificates/server.crt', './certificates/server.key')
