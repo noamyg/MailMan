@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-from html import escape
 from flask import render_template_string
 import os
 import logging
@@ -15,13 +14,11 @@ def readTemplate(filename):
         templateSenderName = ''
         if soup.subject:
             templateSubject = soup.subject.string
-            templateFileContent = templateFileContent.replace(escape(templateSubject), '')
         if soup.sender:
             templateSender = soup.sender.string
-            templateFileContent = templateFileContent.replace(escape(templateSender), '')
         if soup.sendername:
             templateSenderName = soup.sendername.string
-            templateFileContent = templateFileContent.replace(escape(templateSenderName), '')
+        templateFileContent = templateFileContent[templateFileContent.find('<html>'):]
         return templateSubject, templateSender, templateSenderName, templateFileContent
 
 
