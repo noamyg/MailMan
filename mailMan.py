@@ -26,13 +26,19 @@ logging.basicConfig(
 
 logger = logging.getLogger('mailman_logger')
 
-
-if len(sys.argv) < 2 or smtpController.connect(sys.argv[1]) is not True:
+if len(sys.argv) < 2:
     logger.error("You must supply a SMTP connection name as a parameter (using a valid connection from config.xml)")
     logger.error("If running as NSSM service, use nssm.exe edit to add server name as parameter")
     sys.exit(2)
 
+if smtpController.connect(sys.argv[1]) is not True:
+   logger.error("Connection not established. Please check your connection to server defined in config.xml")
+   sys.exit(2)
+
 port = 5000
+if len(sys.argv) > 2:
+    port = int(sys.argv[2])
+
 
 class SendMail(Resource):
     def post(self):
@@ -129,8 +135,6 @@ api.add_resource(SendMail, '/sendMail')
 
 
 if __name__ == '__main__':
-    if len(sys.argv) == 3:
-        port = int(sys.argv[2])
     if os.path.isfile('./certificates/server.crt') and os.path.isfile('./certificates/server.key'):
         logger.info("Certificates found. Running with SSL context")
         context = ('./certificates/server.crt', './certificates/server.key')
