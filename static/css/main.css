@@ -12,3 +12,7 @@ body {
     display: inline-block;
     fill: currentColor;
 }
+label.required::after {
+  content: " *";
+  color: red;;
+}

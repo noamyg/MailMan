@@ -5,6 +5,7 @@ from flask import Flask, request, abort, json, render_template, send_file
 from flask_restful import Resource, Api
 from flask_cors import CORS
 from validate_email import validate_email
+import traceback
 import sys
 import os
 import logging
@@ -69,7 +70,11 @@ class SendMail(Resource):
         logger.info('Recipients: {}, CCRecipients: {}, BCCRecipients {}, Template: {}'.format(to, cc, bcc, body.get("t")))
         subjectParams = body.get("sp")
         bodyParams = body.get("bp")
-        smtpController.sendMail(to, cc, bcc, template, bodyParams, subjectParams)
+        try:
+            smtpController.sendMail(to, cc, bcc, template, bodyParams, subjectParams)
+        except Exception as err:
+            logger.error(traceback.format_exc())
+            return err.strerror, 500
         return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
 
 

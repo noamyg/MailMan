@@ -51,6 +51,11 @@ function sendMailToCreator(submitButton){
             $submitButton.removeClass('btn-primary').addClass('btn-success');
             $submitButton.html('<i class="fa fa-check animated"></i>')
         },
+        error: function (error) {
+            toastr.error(error.responseText);
+            $submitButton.removeClass('disabled');
+            $submitButton.html('Submit');
+        },
         data: data
     });
 };
@@ -75,3 +80,4 @@ function uploadTemplate(){
     });
     return false;
 };
+
