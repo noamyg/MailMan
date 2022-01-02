@@ -109,3 +109,10 @@ ENV/
 
 # idea
 idea/
+pyvenv.cfg
+reply
+venv.zip
+.idea/workspace.xml
+.vscode/launch.json
+.vscode/settings.json
+certificates/server.zip
