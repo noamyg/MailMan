@@ -24,7 +24,15 @@ def connect(connectioName):
         if node.find('Name').text == connectioName:
             logger.info('Found Server Config: {}'.format(connectioName))
             global server
-            server = SMTPServer(connectioName, node.find('Host').text, node.find('Port').text, node.find('Auth').text, node.find('UserName').text, node.find('Password').text)
+            server = SMTPServer(
+                connectioName,
+                node.find('Host').text,
+                node.find('Port').text,
+                node.find('Auth').text,
+                node.find('StartTLS').text == 'true',
+                node.find('UserName').text,
+                node.find('Password').text
+            )
             try:
                 global connection
                 connection = SMTPLib.SMTP(host=server.host, port=int(server.port))
@@ -32,7 +40,8 @@ def connect(connectioName):
                 try:
                     connection.connect(server.host, int(server.port))
                     connection.ehlo()
-                    connection.starttls()
+                    if server.startTls:
+                        connection.starttls()
                     if server.auth != 'None':
                         connection.login(server.username, server.password)
                 except:
