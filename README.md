@@ -28,6 +28,10 @@ If you wish to make changes, you'll have to get [Python](https://www.python.org/
 2. Make sure to configure your organization's SMTP server in a `config.xml` file. You may use `config.example.xml` for reference.
 3. Run mailMan.py with the the name of your SMTP server as first param, and optional port (default: 5000) as second param (i.e., `python mailMan.py Gmail [8080]`).
 
+*You can create a fake SMTP server with **[Ethereal]**(https://ethereal.email/).*
+
+*[With **Gmail**, you must allow "Less secure apps".](https://support.google.com/accounts/answer/6010255)*
+
 ### Deployment
 
 1. If you made changes to the code, you might want to edit `mailMan.spec`. [See here](https://pythonhosted.org/PyInstaller/spec-files.html).
